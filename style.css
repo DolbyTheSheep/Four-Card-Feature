@@ -10,10 +10,12 @@
     --very-light-gray: hsl(0, 0%, 98%);
 
     --border-radius: 5px;
-    --padding: 8%;
+    --padding: 7%;
+    --width: 86%;
     --gap: 25px;
 
-    --font-size: calc(12px + (15 - 12) * ((100vw - 375px) / (1440 - 375)));
+    --font-size-main: calc(12px + (15 - 12) * ((100vw - 375px) / (1440 - 375)));
+    --font-size-second: calc(14px + (17 - 14) * ((100vw - 375px) / (1440 - 375)));
 }
 
 body {
@@ -21,7 +23,7 @@ body {
     color: var(--grayish-blue);
 
     font-family: 'Poppins';
-    font-size: var(--font-size);
+    font-size: var(--font-size-main);
     font-weight: 200px;
 
     display: flex;
@@ -29,32 +31,45 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    gap: var(--gap);
 
     padding: var(--padding);
     margin: 0px;
 }
 
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
 h1 {
     font-weight: 400px;
     color: var(--very-dark-blue);
+    margin: 0px;
 }
 
 .title {
     font-weight: 700px;
+    margin-top: 0px;
+    padding-top: 0px;
 }
 
 .second-title {
     font-weight: 200;
+    padding-top: var(--padding);
 }
 
 .page-description {
     font-weight: 400px;
-    font-size: 14px;
+    font-size: var(--font-size-second);
 }
 
 main {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-items: center;
     gap: var(--gap);
 
     text-align: left;
@@ -67,10 +82,25 @@ main {
     box-shadow: var(--very-dark-blue) 0px 10px 20px -15px;
 
     padding: var(--padding);
-    padding-top: 0%;
 
     display: flex;
     flex-direction: column;
+    width: var(--width);
+}
+
+.second-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+    gap: var(--gap);
+    width: var(--width);
+}
+
+.second-block .shadow {
+    width: 100%;
 }
 
 .supervisor {
@@ -93,4 +123,43 @@ img {
     width: 20%;
     height: auto;
     margin-left: auto;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        padding-top: 0%;
+        padding-bottom: 0%;
+    }
+
+    header {
+        width: 600px;
+    }
+
+    main {
+        width: 100%;
+        max-width: 1200px;
+        flex-direction: row;
+        gap: var(--gap);
+        justify-content: space-between;
+        margin: auto;
+    }
+
+    .shadow {
+        width: 28%;
+        padding: 2%;
+    }
+
+    .second-block {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+        width: 30%;
+        margin: auto;
+        max-width: fit-content;
+    }
+
+    .second-block .shadow {
+        width: auto;
+        padding: 7%;
+    }
 }
