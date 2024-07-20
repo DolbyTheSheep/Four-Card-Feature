@@ -12,6 +12,8 @@
     --border-radius: 5px;
     --padding: 8%;
     --gap: 25px;
+
+    --font-size: calc(12px + (15 - 12) * ((100vw - 375px) / (1440 - 375)));
 }
 
 body {
@@ -19,7 +21,7 @@ body {
     color: var(--grayish-blue);
 
     font-family: 'Poppins';
-    font-size: 12px;
+    font-size: var(--font-size);
     font-weight: 200px;
 
     display: flex;
